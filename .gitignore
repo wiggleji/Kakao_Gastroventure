@@ -3,7 +3,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,pycharm+all,macos,virtualenv,venv,git
 
 # Kakao API key
-KEY.json
+gastroventure/env.json
 
 ### Git ###
 # Created by git for backups. To disable backups in Git:
