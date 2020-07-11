@@ -19,9 +19,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-with open("env.json") as api:
-    KAKAO_API_KEY = json.load(api)["KAKAO_API_KEY"]
-    SECRET_KEY = json.load(api)["SECRET_KEY"]
+with open(os.path.join(BASE_DIR, "gastroventure/conf.json")) as api:
+    env_data = json.load(api)
+    KAKAO_API_KEY = env_data["KAKAO_API_KEY"]
+    SECRET_KEY = env_data["SECRET_KEY"]
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
@@ -33,6 +34,11 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,6 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'service',
 ]
 
 MIDDLEWARE = [
