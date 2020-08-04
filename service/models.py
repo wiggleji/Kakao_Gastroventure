@@ -7,7 +7,9 @@ class Restaurant(models.Model):
     # PK - 음식점 id
 
     # 음식점명
-    name = models.CharField(max_length=128, blank=False, null=False)
+    name = models.CharField(max_length=128, blank=True, null=False)
+    # 음식점 키워드 (값 비교 색인)
+    name_keyword = models.CharField(max_length=128, blank=True, null=False)
     # kakao_id (Unique)
     kakao_id = models.IntegerField(unique=True)
     # kakao_url (Unique)
@@ -61,10 +63,14 @@ class License(models.Model):
         on_delete=models.CASCADE
     )
     # 변경일자
-    update_date = models.DateField(blank=False, null=False)
+    update_date = models.DateField(blank=True, null=False)
     # 변경 전 내용
     before_data = models.CharField(max_length=256)
     # 변경 후 내용
     after_data = models.CharField(max_length=256)
     # 변경사유
     reason = models.CharField(max_length=256)
+
+    class Meta:
+        # 식품안전나라 내역은 갱신 날짜로 오름차순 정렬
+        ordering = ['update_date', 'pk']

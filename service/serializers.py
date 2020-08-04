@@ -18,11 +18,14 @@ class LicenseSerializer(serializers.ModelSerializer):
 
 class RestaurantSerializer(serializers.ModelSerializer):
     reviews = ReviewSerializer(many=True, read_only=True)
+    license = LicenseSerializer(many=True, read_only=True)
 
     class Meta:
         model = Restaurant
         fields = [
+            'pk',
             'name',
+            'name_keyword',
             'kakao_id',
             'kakao_url',
             'address',
@@ -30,5 +33,6 @@ class RestaurantSerializer(serializers.ModelSerializer):
             'telephone',
             'average_rates',
             'comment_count',
+            'license',
             'reviews'
         ]
