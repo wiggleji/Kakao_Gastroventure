@@ -130,5 +130,9 @@ def make_model_by_history_list(rst_history):
 if __name__ == '__main__':
     keyword = "오향가"
     rsts_list = gov_license(keyword)
+    print(rsts_list)
+    print()
+    # TODO: 카카오 주소와 동일한지 비교
     rst_history = get_owner_history_text_list(rsts_list[1]["BSN_LCNS_LEDG_NO"])
+    print(rst_history)
     make_model_by_history_list(rst_history)
