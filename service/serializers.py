@@ -28,6 +28,7 @@ class RestaurantSerializer(serializers.ModelSerializer):
             'name_keyword',
             'kakao_id',
             'kakao_url',
+            'kakao_image_url',
             'address',
             'road_address',
             'telephone',

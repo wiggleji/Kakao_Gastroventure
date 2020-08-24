@@ -39,6 +39,7 @@ class RestaurantViewSet(viewsets.ModelViewSet):
                         name_keyword = name
                     kakao_id = rst['id']
                     kakao_url = rst['place_url']
+                    kakao_image_url = rst['kakao_image_url']
                     address = rst['address_name']
                     road_address = rst['road_address_name']
                     telephone = rst['phone']
@@ -51,6 +52,7 @@ class RestaurantViewSet(viewsets.ModelViewSet):
                         name_keyword=name_keyword,
                         kakao_id=kakao_id,
                         kakao_url=kakao_url,
+                        kakao_image_url=kakao_image_url,
                         address=address,
                         road_address=road_address,
                         telephone=telephone,

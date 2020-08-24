@@ -14,6 +14,8 @@ class Restaurant(models.Model):
     kakao_id = models.IntegerField(unique=True)
     # kakao_url (Unique)
     kakao_url = models.URLField(default="http://place.map.kakao.com/")
+    # kakao_image_url (Unique)
+    kakao_image_url = models.URLField(blank=True, null=True)
     # 음식점 주소 (Unique)
     address = models.CharField(default="", max_length=256)
     # 음식점 도로명 주소 (Unique)

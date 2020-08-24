@@ -58,6 +58,13 @@ def list_with_rate(rsts):
         score_count = rst_info["basicInfo"]["feedback"]["scorecnt"]
         comment_count = rst_info["basicInfo"]["feedback"]["comntcnt"]
 
+        # 음식점 이미지
+        if "mainphotourl" in rst_info["basicInfo"]:
+            kakao_image_url = rst_info["basicInfo"]["mainphotourl"]
+        else:
+            # Default 이미지 URL
+            kakao_image_url = "https://newsimg.hankookilbo.com/2016/04/13/201604131460701467_1.jpg"
+
         try:
             # 평균 평점
             rst_rate = round(score_sum / score_count, 1)
@@ -66,6 +73,7 @@ def list_with_rate(rsts):
             rst_rate = 0
         rst["scoreavg"] = rst_rate
         rst["comment_count"] = comment_count
+        rst["kakao_image_url"] = kakao_image_url
         restaurant_list.append(rst)
 
     return restaurant_list
