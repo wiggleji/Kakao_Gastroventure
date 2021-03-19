@@ -9,7 +9,7 @@ cssselect==1.1.0
 decorator==4.4.2
 Django==2.2
 django-cors-headers==3.4.0
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 fake-useragent==0.1.11
 idna==2.10
 ipython==7.16.1
