@@ -12,7 +12,7 @@ django-cors-headers==3.4.0
 djangorestframework==3.11.0
 fake-useragent==0.1.11
 idna==2.10
-ipython==7.16.1
+ipython==7.16.3
 ipython-genutils==0.2.0
 jedi==0.17.1
 lxml==4.5.1
